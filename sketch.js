@@ -991,7 +991,7 @@ if(c==2){
 
 }
   
-  function keyPressed(){
+function keyPressed(){
     
   if (key == "f"){
     if(a==1){
