@@ -33,6 +33,7 @@ let BBB;
 let BBBB;
 let bx;
 let by;
+let bt = 0;
 
 function preload(){
   one = loadImage("IMG_0138.PNG");
@@ -950,7 +951,23 @@ if(c==2){
   if(B==1) {
     fill(0,0,0)
     rect(0,0,1000,600)
+    if(bt == 0) {
+      bt = millis()
+    }
+    if(millis() - bt >= 3000) {
+      B = 0;
+      a = 2;
+      b = 2;
+      c = 2;
+      x = bx;
+      y = by;
+      z = bx;
+      bt = 0;
+    }
   }
+
+  
+
 }
   
   function keyPressed(){
@@ -988,11 +1005,8 @@ if(c==2){
      
   if (key == "g"){
     if(b==1){
-        b=2;
-        stop.play();
-        if(BBB==2) {
-          y=x
-        }
+      b=2;
+      stop.play();
       if(R==2){
         if(yy != 0){
           yy = floor(random(2))
@@ -1009,10 +1023,6 @@ if(c==2){
     if(c==1){
       c=2
       stop.play()
-      if(BBB==2){
-        z=y;
-        BBBB=1;
-      }
       if(R==2){
         if(zz != 0){
           zz = floor(random(2))
