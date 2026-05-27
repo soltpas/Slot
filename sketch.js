@@ -35,24 +35,24 @@ let bx;
 let by;
 
 function preload(){
-  one=loadImage("IMG_0138.png")
-  two=loadImage("IMG_0140.webp")
-  three=loadImage("IMG_0139.png")
-  four=loadImage("IMG_0141.png")
-  five=loadImage("IMG_0147.png")
-  six=loadImage("IMG_0148.png")
-  seven=loadImage("IMG_0144.png")
-  eight=loadImage("IMG_0145.png")
-  nine=loadImage("IMG_0146.png")
-       macine=loadImage("IMG_0170-4.jpeg")
-  flame=loadImage("IMG_0173.png")
-  atu=loadImage("IMG_0171.png")
-  stop=loadSound('Stop.mp3')
-  reset=loadSound('Reset.mp3')
-  hit=loadSound('Hit.mp3')
-  shit=loadSound('SHit.mp3')
-  end=loadImage("IMG_0255.jpeg")
-  win=loadImage("IMG_0256.jpeg")
+  one = loadImage("IMG_0138.PNG");
+  two = loadImage("IMG_0140.WEBP");
+  three = loadImage("IMG_0139.PNG");
+  four = loadImage("IMG_0141.PNG");
+  five = loadImage("IMG_0147.PNG");
+  six = loadImage("IMG_0148.PNG");
+  seven = loadImage("IMG_0144.PNG");
+  eight = loadImage("IMG_0145.PNG");
+  nine = loadImage("IMG_0146.PNG");
+  macine = loadImage("IMG_0170.jpeg");
+  flame = loadImage("IMG_0173.PNG");
+  atu = loadImage("IMG_0171.PNG");
+  stop = loadSound('Stop.mp3');
+  reset = loadSound('Reset.mp3');
+  hit = loadSound('Hit.mp3');
+  shit = loadSound('SHit.mp3');
+  end = loadImage("IMG_0255.jpeg", () => {}, () => { end = createImage(1, 1); });
+  win = loadImage("IMG_0256.jpeg", () => {}, () => { win = createImage(1, 1); });
 }
 
 function setup() {
@@ -961,17 +961,14 @@ if(c==2){
   }
 }
   
-  function touchMoved(){
+  function keyPressed(){
     
-  if (touches[0].y>110){
-   if (0<touches[0].x){
-     if(touches[0].x<430){
-       if(a==1){
-    a=2;
-    stop.play();
-     }
-   }
-   }
+  if (key == "f"){
+    if(a==1){
+      a=2;
+      stop.play();
+    }
+  }
     
  if(h==1){
    hit.play()
@@ -997,74 +994,71 @@ if(c==2){
       }    
  }   
      
-   if (450<touches[0].x){
-     if(touches[0].x<700){
-     if(b==1){
-       b=2;
-       stop.play();
-       if(BBB==2) {
-         y=x
-       }
-       if(R==2){
-         if(yy != 0){
-       yy = floor(random(2))
-       if(yy==1){
-       y=x
-       yy=0  
+  if (key == "g"){
+    if(b==1){
+        b=2;
+        stop.play();
+        if(BBB==2) {
+          y=x
+        }
+      if(R==2){
+        if(yy != 0){
+          yy = floor(random(2))
+          if(yy==1){
+            y=x
+            yy=0  
           }
-         }
-       }
+        }
       }
-     }
-   }
+    }
+  }
  
-   if (700<touches[0].x){
-     if(c==1){
-       c=2
-       stop.play()
-       if(BBB==2){
-         z=y;
-         BBBB=1;
-       }
-       if(R==2){
-         if(zz != 0){
-       zz = floor(random(2))
-       if(zz==1){
-       z=y
-       zz=0
-       }
-       }
+  if (key == "h"){
+    if(c==1){
+      c=2
+      stop.play()
+      if(BBB==2){
+        z=y;
+        BBBB=1;
       }
-     }
-   }
+      if(R==2){
+        if(zz != 0){
+          zz = floor(random(2))
+          if(zz==1){
+            z=y
+            zz=0
+          }
+        }
+      }
+    }
   }
   
-   if (touches[0].y<110){
-     if(a==2){
-       if(b==2){
-         if(c==2){
-       a=1;
-       b=1;
-       c=1;
-       yy=3;
-       zz=3;
-       reset.play();
-       hh=1;
-       m = m - 100;
-       BB=1;
-       B=0; 
-       if(BBBB==1) {
-         BBB = 1;
-         BBBB = 0;
-       }    
-       if (m < 0) {
-        e = 2;
-        a = 2;
-        b = 2;
-        c = 2;
-      }    
-   }
+  if(key == "j"){
+    if(a==2){
+      if(b==2){
+        if(c==2){
+          a=1;
+          b=1;
+          c=1;
+          yy=3;
+          zz=3;
+          reset.play();
+          hh=1;
+          m = m - 100;
+          BB=1;
+          B=0; 
+          if(BBBB==1) {
+            BBB = 1;
+            BBBB = 0;
+          }    
+          if (m < 0) {
+          e = 2;
+          a = 2;
+          b = 2;
+          c = 2;
+          }    
+        }
+      }
+    }
   }
-}
-}
 }
