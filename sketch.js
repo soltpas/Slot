@@ -912,7 +912,7 @@ if(c==2){
     if(bt == 0) {
       bt = millis()
     }
-    if(millis() - bt >= 3000) {
+    if(millis() - bt >= 2000) {
       B = 0;
       a = 2;
       b = 2;
