@@ -1,9 +1,9 @@
 let x=2;
 let y=5;
 let z=9;
-let a=1;
-let b=1;
-let c=1;
+let a=2;
+let b=2;
+let c=2;
 let one;
 let two;
 let three;
@@ -23,7 +23,7 @@ let shit;
 let h;
 let hh=2;
 let hhh=2;
-let m=4900;
+let m=5000;
 let e = 1;
 let w = 1;
 let win;
@@ -34,6 +34,7 @@ let BBBB;
 let bx;
 let by;
 let bt = 0;
+let Rp;
 
 function preload(){
   one = loadImage("IMG_0138.PNG");
@@ -394,48 +395,6 @@ if (y==8){
 if (y==9){
   image(one,450,250,250,200)
  }
-  
-  if(a==2){
-    if(b==2){
-if(c==2){
- if (x==6){
-  if (y==6){
-     if(z==6){
-       R=2
-       }
-     }
-  }
-}
-    }
-  }
- 
-  if(a==2){
-  if(b==2){  
-  if(c==2){
- if (x==7){
-  if (y==6){
-     if(z==5){
-       R=2
-       }
-     }
-    }
-  }
-}
-}
-  
-  if(a==2){
-  if(b==2){  
-  if(c==2){
- if (x==5){
-  if (y==6){
-     if(z==7){
-       R=2
-       }
-     }
-  }
-}
-}
-}
 
   if(c==2){
  if(a==2){
@@ -967,6 +926,7 @@ if(c==2){
 
   if(h==1){
     hit.play()
+    Rp += floor(random(1,2));
     h=2
     m = m + 2500
     if (m > 500000) {
@@ -979,6 +939,7 @@ if(c==2){
   
   if(hhh==1){
     shit.play()
+    R = 2;
     hhh=2
     m = m * 2
     if(m > 50000) {
@@ -1057,7 +1018,13 @@ function keyPressed(){
           a = 2;
           b = 2;
           c = 2;
-          }    
+          m = m + 100;
+          }
+          R=1;
+          if(Rp >= 10) {
+            R = 2;
+            Rp = 0;
+          }
         }
       }
     }
