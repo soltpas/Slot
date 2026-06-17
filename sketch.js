@@ -34,7 +34,7 @@ let BBBB;
 let bx;
 let by;
 let bt = 0;
-let Rp;
+let Rp = 0;
 
 function preload(){
   one = loadImage("IMG_0138.PNG");
@@ -926,7 +926,7 @@ if(c==2){
 
   if(h==1){
     hit.play()
-    Rp = Rp + floor(random(1,2));
+    Rp = Rp + floor(random(1,3));
     h=2
     m = m + 2500
     if (m > 500000) {
@@ -995,16 +995,6 @@ function keyPressed(){
       }
     }
   }
-  
-  if(key == "RIGHT_ARROW"){
-   b = 2;
-   y = x;
-  }
-
-  if(key == "LEFT_ARROW"){
-   c = 2;
-   z = x;
-  }
 
   if(key == "j"){
     if(a==2){
@@ -1020,6 +1010,12 @@ function keyPressed(){
           m = m - 100;
           BB=1;
           B=0; 
+          if(Rp < 10) {
+            R = 1;
+          } else {
+            R = 2;
+            Rp = Rp - 10;
+          }
           if(BBBB==1) {
             BBB = 1;
             BBBB = 0;
@@ -1030,13 +1026,6 @@ function keyPressed(){
           b = 2;
           c = 2;
           m = m + 100;
-          }
-          if(Rp < 10) {
-            R = 1;
-          }
-          if(Rp >= 10) {
-            R = 2;
-            Rp = Rp - 10;
           }
         }
       }
