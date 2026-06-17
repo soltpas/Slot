@@ -926,7 +926,7 @@ if(c==2){
 
   if(h==1){
     hit.play()
-    Rp += floor(random(1,2));
+    Rp = Rp + floor(random(1,2));
     h=2
     m = m + 2500
     if (m > 500000) {
@@ -940,6 +940,7 @@ if(c==2){
   if(hhh==1){
     shit.play()
     R = 2;
+    Rp = Rp + 10;
     hhh=2
     m = m * 2
     if(m > 50000) {
@@ -995,6 +996,16 @@ function keyPressed(){
     }
   }
   
+  if(key == "RIGHT_ARROW"){
+   b = 2;
+   y = x;
+  }
+
+  if(key == "LEFT_ARROW"){
+   c = 2;
+   z = x;
+  }
+
   if(key == "j"){
     if(a==2){
       if(b==2){
@@ -1020,10 +1031,12 @@ function keyPressed(){
           c = 2;
           m = m + 100;
           }
-          R=1;
+          if(Rp < 10) {
+            R = 1;
+          }
           if(Rp >= 10) {
             R = 2;
-            Rp = 0;
+            Rp = Rp - 10;
           }
         }
       }
