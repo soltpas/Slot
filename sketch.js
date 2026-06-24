@@ -23,7 +23,7 @@ let shit;
 let h;
 let hh=2;
 let hhh=2;
-let m=500;
+let m=50;
 let e = 1;
 let w = 1;
 let win;
@@ -928,7 +928,7 @@ if(c==2){
     hit.play()
     Rp = Rp + floor(random(1,3));
     h=2
-    m = m + 250
+    m = m + 25
     if (m > 500000) {
       w = 2;
       a = 2;
@@ -942,7 +942,7 @@ if(c==2){
     R = 2;
     Rp = Rp + 10;
     hhh=2
-    m = m + 250
+    m = m + 25
     m = m * 2
     if(m > 50000) {
       w = 2;
@@ -958,7 +958,7 @@ function keyPressed(){
 
   if (key == "q"){
     if (m == 0){
-      m + 500
+      m + 50
     }
   }
   
@@ -1014,7 +1014,7 @@ function keyPressed(){
           zz=3;
           reset.play();
           hh=1;
-          m = m - 10;
+          m = m - 1;
           BB=1;
           B=0; 
           if(Rp < 10) {
@@ -1032,7 +1032,7 @@ function keyPressed(){
           a = 2;
           b = 2;
           c = 2;
-          m = m + 10;
+          m = m + 1;
           }
         }
       }
