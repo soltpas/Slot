@@ -860,7 +860,7 @@ if(c==2){
     image(atu,300,-50,500,200)
   }
   
-  fill("gold");
+  fill("silver");
   textAlign(LEFT);
   text("残り: " + m,10,40);
   
