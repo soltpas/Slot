@@ -860,9 +860,9 @@ if(c==2){
     image(atu,300,-50,500,200)
   }
   
-  fill("silver");
+  fill("gold");
   textAlign(LEFT);
-  text("残り: " + m,10,40);
+  text("残り: " + m + "枚",10,40);
   
   if (a==1){
    x++
@@ -912,7 +912,7 @@ if(c==2){
     if(bt == 0) {
       bt = millis()
     }
-    if(millis() - bt >= 2000) {
+    if(millis() - bt >= 1500) {
       B = 0;
       a = 2;
       b = 2;
@@ -1004,35 +1004,37 @@ function keyPressed(){
   }
 
   if(key == "j"){
-    if(a==2){
-      if(b==2){
-        if(c==2){
-          a=1;
-          b=1;
-          c=1;
-          yy=3;
-          zz=3;
-          reset.play();
-          hh=1;
-          m = m - 1;
-          BB=1;
-          B=0; 
-          if(Rp < 10) {
-            R = 1;
-          } else {
-            R = 2;
-            Rp = Rp - 10;
-          }
-          if(BBBB==1) {
-            BBB = 1;
-            BBBB = 0;
-          }    
-          if (m < 0) {
-          e = 2;
-          a = 2;
-          b = 2;
-          c = 2;
-          m = m + 1;
+    if(B != 1){
+      if(a==2){
+        if(b==2){
+          if(c==2){
+            a=1;
+            b=1;
+            c=1;
+            yy=3;
+            zz=3;
+            reset.play();
+            hh=1;
+            m = m - 1;
+            BB=1;
+            B=0; 
+            if(Rp < 10) {
+              R = 1;
+            } else {
+              R = 2;
+              Rp = Rp - 10;
+            }
+            if(BBBB==1) {
+              BBB = 1;
+              BBBB = 0;
+            }    
+            if (m < 0) {
+            e = 2;
+            a = 2;
+            b = 2;
+            c = 2;
+            m = m + 1;
+            }
           }
         }
       }
